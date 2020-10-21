@@ -241,5 +241,4 @@ def train(
 
 
 if __name__ == "__main__":
-    mlflow.set_tracking_uri("http://localhost:5000")
     run()
