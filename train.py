@@ -18,6 +18,8 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 
 import mlflow
+remote_server_uri = "http://localhost:5000"
+mlflow.set_tracking_uri(remote_server_uri)
 
 from image_pyfunc import decode_and_resize_image, log_model, KerasImageClassifierPyfunc
 
