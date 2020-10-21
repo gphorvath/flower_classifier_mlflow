@@ -93,7 +93,7 @@ class MLflowLogger(Callback):
     Metrics are logged after every epoch. The logger keeps track of the best model based on the
     validation metric. At the end of the training, the best model is logged with MLflow.
     """
-
+    
     def __init__(self, model, x_train, y_train, x_valid, y_valid, **kwargs):
         self._model = model
         self._best_val_loss = math.inf

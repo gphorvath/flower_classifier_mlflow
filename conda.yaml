@@ -13,3 +13,5 @@ dependencies:
   - pip=20.0.2
   - pip:
     - mlflow>=1.6
+variables:
+  - MLFLOW_TRACKING_URI=https://localhost:5000
