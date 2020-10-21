@@ -18,8 +18,6 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 
 import mlflow
-remote_server_uri = "http://localhost:5000"
-mlflow.set_tracking_uri(remote_server_uri)
 
 from image_pyfunc import decode_and_resize_image, log_model, KerasImageClassifierPyfunc
 
@@ -116,6 +114,7 @@ class MLflowLogger(Callback):
                 name = "valid_" + name[4:]
             else:
                 name = "train_" + name
+            
             mlflow.log_metric(name, value)
         val_loss = logs["val_loss"]
         if val_loss < self._best_val_loss:
@@ -242,4 +241,5 @@ def train(
 
 
 if __name__ == "__main__":
+    mlflow.set_tracking_uri("http://localhost:5000")
     run()
